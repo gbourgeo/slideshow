@@ -4,16 +4,16 @@ SRCS = main.c
 
 OBJS = $(SRCS:.c=.o)
 
-LIB_D = libft/
+LIB_D = libft
 
-INCS = -I$(LIB_D)includes
+INCS = -I$(LIB_D)/includes
 
 LIBS = -L$(LIB_D) -lft
 
-all: $(LIB_D) $(NAME)
+all: mylib $(NAME)
 
-$(LIB_D):
-	make -C $@
+mylib:
+	make -C $(LIB_D)
 
 $(NAME): $(OBJS)
 	gcc -o $@ $^ $(LIBS)

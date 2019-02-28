@@ -9,6 +9,7 @@ enum
 
 typedef struct  s_image
 {
+    int             id;
     int             type;
     int             len;
     char            **tags;
@@ -19,7 +20,9 @@ typedef struct  s_image
 typedef struct  s_data
 {
     t_image     *v;
+    int         v_len;
     t_image     *h;
+    int         h_len;
 }               t_data;
 
 #endif
