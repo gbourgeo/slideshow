@@ -22,9 +22,11 @@ $(NAME): $(OBJS)
 	gcc -o $@ -c $< $(INCS)
 
 clean:
+	make -C $(LIB_D) clean
 	/bin/rm -f $(OBJS)
 
 fclean: clean
+	make -C $(LIB_D) fclean
 	/bin/rm -f $(NAME)
 
 re: fclean all
